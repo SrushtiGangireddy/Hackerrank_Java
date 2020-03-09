@@ -9,7 +9,14 @@ public class Solution {
         // Write your code here.
         scan.close();
         s = removeLeadingNonAlpha(s);
-        String[] words = s.split("[^a-zA-Z]+");
+
+        if (s.length() == 0) {
+            System.out.println(0);
+            return;
+        }
+
+
+        String[] words = s.split("\\P{Alpha}+");
         System.out.println(words.length);
         for(int i=0;i<words.length;i++) {
             System.out.println(words[i]);
